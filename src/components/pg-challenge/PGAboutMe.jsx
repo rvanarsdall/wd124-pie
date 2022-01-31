@@ -1,9 +1,10 @@
-function PgAboutMe() {
-  const favoriteFoods = ["tacos", "pizza", "indian food", "chocolate"];
+function PgAboutMe(props) {
+  const { name, location, favoriteFoods } = props;
+  //? If you want to destructure then you can
   return (
     <div>
-      <h3>Rob</h3>
-      <p>I'm from Fort Wayne Indiana</p>
+      <h3>{name}</h3>
+      <p>{props.location}</p>
       <ul>
         <li>Korea</li>
         <li>Guam</li>
@@ -11,7 +12,7 @@ function PgAboutMe() {
       </ul>
       <p>Favorite Foods</p>
       <ul>
-        {favoriteFoods.map((list) => (
+        {props.favoriteFoods.map((list) => (
           <li>{list}</li>
         ))}
       </ul>
