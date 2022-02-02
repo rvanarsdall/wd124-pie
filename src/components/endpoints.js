@@ -1,6 +1,7 @@
 export const EndPoints = {
   user: {
     register: "/user/register",
+    login: "/user/login",
   },
 };
 

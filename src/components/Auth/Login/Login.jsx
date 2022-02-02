@@ -1,25 +1,34 @@
 //? firstName, lastName, email, password
+
+/*
+TODO: 
+Update the name of SIGNUP to Login
+TODO:
+Update the export default from SIGNUP to Login
+TODO:
+Remove unnecessary useState/form collection/handle submit
+TODO:
+Update Endpoint file and handle reference for the fetch
+
+
+*/
 import React, { useState } from "react"; //imrs
 import { APIURL, EndPoints } from "../../endpoints";
 
-const Signup = (props) => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
     console.log("button was clicked");
-    console.log(APIURL + EndPoints.user.register);
+    console.log(APIURL + EndPoints.user.login);
     const reqestObject = {
-      firstName: firstName,
-      lastName: lastName,
       email: email,
       password: password,
     };
 
-    fetch(APIURL + EndPoints.user.register, {
+    fetch(APIURL + EndPoints.user.login, {
       method: "POST",
       body: JSON.stringify(reqestObject),
       headers: new Headers({
@@ -32,27 +41,8 @@ const Signup = (props) => {
   }
   return (
     <div>
-      <h1>Hello from Signup</h1>
+      <h1>Hello from Login</h1>
       <form>
-        <label htmlFor="firstName">First Name</label>
-        <br />
-        <input
-          type="text"
-          id="firstName"
-          placeholder="Type first name"
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-        />
-        <br />
-        <label htmlFor="lastName">Last Name</label>
-        <br />
-        <input
-          type="text"
-          id="lastName"
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
-        />
-        <br />
         <label htmlFor="email">Email Name</label>
         <br />
         <input
@@ -80,4 +70,4 @@ const Signup = (props) => {
   );
 };
 
-export default Signup;
+export default Login;
