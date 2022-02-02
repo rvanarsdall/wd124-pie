@@ -5,7 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import AppPlayground from "./AppPlayground";
 
-const isAppPlaygroundActive = true;
+const isAppPlaygroundActive = false;
 ReactDOM.render(
   <React.StrictMode>
     {isAppPlaygroundActive ? <AppPlayground /> : <App />}
