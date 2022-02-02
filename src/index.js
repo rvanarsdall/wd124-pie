@@ -5,10 +5,10 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import AppPlayground from "./AppPlayground";
 
+const isAppPlaygroundActive = true;
 ReactDOM.render(
   <React.StrictMode>
-    {/* <AppPlayground /> */}
-    <App />
+    {isAppPlaygroundActive ? <AppPlayground /> : <App />}
   </React.StrictMode>,
   document.getElementById("root")
 );

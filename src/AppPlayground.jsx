@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import PgHeader from "./components/pg-header/PgHeader";
 import PgAboutMe from "./components/pg-challenge/PGAboutMe";
+import ClickCounter from "./components/pg-clickcounter/PgClickCounter";
 
 function AppPlayground() {
   let name = "Brenda";
@@ -18,6 +19,7 @@ function AppPlayground() {
         location={location}
         favoriteFoods={favoriteFoods}
       />
+      <ClickCounter />
     </div>
   );
 }
