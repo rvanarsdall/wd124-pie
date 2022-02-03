@@ -34,7 +34,7 @@ const App = (props) => {
       <Navbar clearLocalStorage={clearLocalStorage} />
       <Auth updateLocalStorage={updateLocalStorage} />
 
-      <PieIndex />
+      <PieIndex token={token} />
     </div>
   );
 };

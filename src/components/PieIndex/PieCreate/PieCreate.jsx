@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { APIURL, EndPoints } from "../../endpoints";
 //? nameOfPie, baseOfPie, crust, timeToBake, servings, ratings  we need to create useState variables for these inputs
 //TODO Create a form
 //TODO Have a function for submitting data
@@ -10,11 +11,30 @@ const PieCreate = (props) => {
   const [baseOfPie, setBaseOfPie] = useState("");
   const [crust, setCrust] = useState("");
   const [timeToBake, setTimeToBake] = useState("");
-  const [ratings, setRatings] = useState("");
+  const [rating, setRating] = useState("");
   const [servings, setServings] = useState("");
+
   function handleSubmit(event) {
     event.preventDefault();
-    alert("it worked ");
+    const requestObject = {
+      nameOfPie: nameOfPie,
+      baseOfPie: baseOfPie,
+      crust: crust,
+      timeToBake: Number(timeToBake),
+      servings: Number(servings),
+      rating: Number(rating),
+    };
+    fetch(APIURL + EndPoints.pie.create, {
+      method: "POST",
+      body: JSON.stringify(requestObject),
+      headers: new Headers({
+        "Content-Type": "application/json",
+        Authorization: props.token,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .catch((err) => console.error(err));
   }
   return (
     <div>
@@ -50,8 +70,8 @@ const PieCreate = (props) => {
         <input
           type="text"
           placeholder="Rating"
-          value={ratings}
-          onChange={(e) => setRatings(e.target.value)}
+          value={rating}
+          onChange={(e) => setRating(e.target.value)}
         />
 
         <input
