@@ -21,9 +21,16 @@ const App = (props) => {
     }
   }, []);
 
+  //TODO: create a function that will clear out the token & update the state of token to be empty string and pass it down to the navbar component
+
+  const clearLocalStorage = () => {
+    localStorage.clear();
+    setToken("");
+  };
+
   return (
     <div className="App">
-      <Navbar />
+      <Navbar clearLocalStorage={clearLocalStorage} />
       <Auth updateLocalStorage={updateLocalStorage} />
     </div>
   );
