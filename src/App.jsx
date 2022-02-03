@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Auth from "./components/Auth/Auth";
 import Navbar from "./components/Navbar/Navbar";
+import PieIndex from "./components/PieIndex/PieIndex";
 
 const App = (props) => {
   const [token, setToken] = useState("");
@@ -32,6 +33,8 @@ const App = (props) => {
     <div className="App">
       <Navbar clearLocalStorage={clearLocalStorage} />
       <Auth updateLocalStorage={updateLocalStorage} />
+
+      <PieIndex />
     </div>
   );
 };

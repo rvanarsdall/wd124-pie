@@ -6,7 +6,7 @@ const Navbar = (props) => {
     <div>
       <nav>
         <img src={piePic} alt="" id="piePic" />
-        <Logout />
+        <Logout clearLocalStorage={props.clearLocalStorage} />
       </nav>
     </div>
   );

@@ -17,7 +17,13 @@ const Logout = (props) => {
 
   return (
     <div>
-      <img src={logoutPic} alt="power button" id="logout" className="logout" />
+      <img
+        src={logoutPic}
+        alt="power button"
+        id="logout"
+        className="logout"
+        onClick={props.clearLocalStorage}
+      />
     </div>
   );
 };
