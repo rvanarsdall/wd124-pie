@@ -32,9 +32,12 @@ const App = (props) => {
   return (
     <div className="App">
       <Navbar clearLocalStorage={clearLocalStorage} />
-      <Auth updateLocalStorage={updateLocalStorage} />
 
-      <PieIndex token={token} />
+      {token ? (
+        <PieIndex token={token} />
+      ) : (
+        <Auth updateLocalStorage={updateLocalStorage} />
+      )}
     </div>
   );
 };

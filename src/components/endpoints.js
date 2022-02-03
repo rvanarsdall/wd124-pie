@@ -5,6 +5,7 @@ export const EndPoints = {
   },
   pie: {
     create: "/pies/",
+    getAllPies: "/pies/",
   },
 };
 
