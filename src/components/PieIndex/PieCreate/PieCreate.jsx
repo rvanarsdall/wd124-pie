@@ -33,7 +33,7 @@ const PieCreate = (props) => {
       }),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data))
+      .then((data) => props.setRefreshPieTable(!props.refreshPieTable))
       .catch((err) => console.error(err));
   }
   return (

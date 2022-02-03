@@ -14,7 +14,8 @@ const PieTable = (props) => {
 
   useEffect(() => {
     fetchPies();
-  }, []);
+  }, [props.refreshPieTable]);
+
   async function fetchPies() {
     const requestOptions = {
       method: "GET",
